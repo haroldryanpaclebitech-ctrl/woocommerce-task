@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elementor Image Guide | WooCommerce Mastery</title>
+    <title>Elementor Image Guide | iTech Mastery Portal</title>
     <link rel="stylesheet" href="index.css">
     <style>
         .elementor-layout {
@@ -44,11 +44,12 @@
         }
 
         .elementor-control-title {
-            font-size: 13px;
+            font-size: 11px;
             text-transform: uppercase;
-            color: #ccc;
+            color: #888;
             margin-bottom: 10px;
             display: block;
+            font-weight: bold;
         }
 
         .elementor-image-preview {
@@ -63,70 +64,157 @@
             cursor: pointer;
             border: 2px dashed #666;
             position: relative;
+            background-image: url('https://images.unsplash.com/photo-1591485112902-693db0455c68?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+            background-size: cover;
         }
 
         .elementor-image-preview:hover {
-            border-color: #96588a;
+            border-color: var(--itech-cyan);
         }
 
         /* Preview Panel */
         .preview-panel {
             flex: 1;
-            padding: 20px;
+            padding: 10px;
             display: flex;
             flex-direction: column;
+            background: #d5dadf;
         }
 
         .preview-window {
             flex: 1;
             background: #fff;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-radius: 0;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .mock-hero {
-            height: 400px;
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow-y: auto;
             position: relative;
         }
 
-        .mock-hero.tutorial-overlay::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border: 3px solid #96588a;
-            pointer-events: none;
+        /* iTech Header Mock */
+        .itech-mock-header {
+            background: #fff;
         }
 
-        .update-bar {
-            background: #96588a;
+        .itech-top-bar {
+            background: var(--itech-blue);
             color: #fff;
-            padding: 10px 20px;
+            padding: 5px 40px;
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+            font-size: 11px;
+        }
+
+        .itech-main-header {
+            padding: 15px 40px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .itech-logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--itech-blue);
+        }
+
+        .itech-search-mock {
+            flex: 1;
+            background: #f0f2f5;
+            height: 40px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .itech-nav-bar {
+            padding: 10px 40px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            gap: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Hero and Content Section */
+        .itech-content-grid {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            padding: 0;
+            height: calc(100% - 150px);
+        }
+
+        .itech-sidebar-mock {
+            background: #f8f9fa;
+            border-right: 1px solid #eee;
+            padding: 20px;
+            font-size: 13px;
+            color: var(--itech-blue);
+        }
+
+        .itech-sidebar-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
             display: flex;
             justify-content: space-between;
-            align-items: center;
         }
 
-        .btn-update {
-            background: #fff;
-            color: #96588a;
+        /* The Hero Banner for Tutorial */
+        .itech-hero-banner {
+            height: 380px;
+            background: #000 url('https://images.unsplash.com/photo-1591485112902-693db0455c68?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .itech-hero-banner.active-element {
+            outline: 3px solid var(--itech-cyan);
+            outline-offset: -3px;
+        }
+
+        .itech-hero-overlay {
+            position: absolute;
+            left: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            max-width: 400px;
+        }
+
+        .itech-sub-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .itech-sub-tile {
+            height: 180px;
+            background: #ddd;
+            border-radius: 4px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Elementor Tools Bar */
+        .elementor-footer {
+            height: 50px;
+            background: #333;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            justify-content: space-between;
+        }
+
+        .btn-publish {
+            background: var(--itech-cyan);
+            color: #fff;
             border: none;
-            padding: 6px 15px;
+            padding: 8px 20px;
             border-radius: 3px;
-            font-weight: 600;
+            font-weight: bold;
             cursor: pointer;
         }
     </style>
@@ -134,22 +222,23 @@
 
 <body>
     <div class="elementor-layout">
-        <!-- Sidebar Navigation (WP style) -->
+        <!-- Dashboard Sidebar -->
         <nav class="wp-sidebar" style="position: relative; height: 100vh;">
             <div class="wp-sidebar-item" onclick="window.location.href='index.html'"><span class="icon">🏠</span> Home
                 Portal</div>
-            <div class="wp-sidebar-item"><span class="icon">🎨</span> Elementor</div>
-            <div class="wp-sidebar-item active">Edit Homepage</div>
-            <div class="wp-sidebar-item" style="padding-top: 20px; color: #888; font-size: 11px;">RESOURCES</div>
-            <div class="wp-sidebar-item" onclick="window.location.href='add-product.html'">Product Guide</div>
-            <div class="wp-sidebar-item" onclick="window.location.href='excel-update.html'">Excel Guide</div>
+            <div class="wp-sidebar-item active"><span class="icon">🎨</span> Page Editor</div>
+            <div class="wp-sidebar-item" style="padding-top: 20px; color: #888; font-size: 11px;">TUTORIAL SOURCE</div>
+            <div class="wp-sidebar-item" style="color: var(--itech-cyan);">www.itech.ph</div>
+            <div class="wp-sidebar-item" onclick="window.location.href='add-product.html'" style="margin-top: 20px;">
+                Product Entry</div>
+            <div class="wp-sidebar-item" onclick="window.location.href='excel-update.html'">Excel Manager</div>
         </nav>
 
         <!-- Elementor Widget Panel -->
         <div class="elementor-sidebar">
             <div class="elementor-sidebar-header">
-                <span style="font-weight: bold; font-size: 14px;">EDIT IMAGE</span>
-                <span style="font-size: 18px; cursor: pointer;">☰</span>
+                <span style="font-weight: bold; font-size: 12px;">EDIT IMAGE</span>
+                <span style="font-size: 14px; cursor: pointer; color: var(--itech-cyan);">X</span>
             </div>
             <div class="elementor-tab-content">
                 <div class="elementor-control-section">
@@ -157,68 +246,126 @@
                     <div class="tutorial-overlay">
                         <span class="tutorial-step">2</span>
                         <div class="elementor-image-preview">
-                            <span style="font-size: 12px; color: #aaa;">Choose Image</span>
+                            <div
+                                style="background: rgba(0,0,0,0.5); width: 100%; padding: 5px; text-align: center; font-size: 10px;">
+                                Choose Image</div>
                         </div>
                     </div>
-                    <div class="step-label"
-                        style="background: transparent; border-color: #96588a; color: #fff; box-shadow: none;">
-                        <h3 style="color: #96588a;">Step 2: Choose Your Image</h3>
-                        <p style="color: #ccc; font-size: 13px;">Click the image box to open the Media Library and
-                            select your new high-res homepage banner.</p>
-                    </div>
+                    <p style="font-size: 12px; color: #aaa; line-height: 1.4;">Click the preview box to swap the iTech
+                        homepage banner with your new artwork.</p>
                 </div>
 
                 <div class="elementor-control-section">
-                    <span class="elementor-control-title">Image Size</span>
-                    <select style="width: 100%; background: #444; border: 1px solid #555; color: #fff; padding: 5px;">
-                        <option>Full</option>
-                        <option>Large</option>
+                    <span class="elementor-control-title">Image Resolution</span>
+                    <select
+                        style="width: 100%; background: #444; border: 1px solid #555; color: #fff; padding: 6px; font-size: 12px; border-radius: 3px;">
+                        <option>Full (1920x800)</option>
                         <option>Medium</option>
+                        <option>Thumbnail</option>
                     </select>
+                </div>
+
+                <div class="elementor-control-section" style="border-top: 1px solid #444; padding-top: 20px;">
+                    <span class="elementor-control-title">Step-by-Step Guide</span>
+                    <div class="step-label"
+                        style="background: rgba(0,174,239,0.1); border-color: var(--itech-cyan); color: #fff; box-shadow: none;">
+                        <h3 style="color: var(--itech-cyan); font-size: 14px;">Master Workflow</h3>
+                        <ol style="font-size: 11px; padding-left: 15px; color: #eee; line-height: 1.6;">
+                            <li>Select the <strong>Hero Section</strong> in preview.</li>
+                            <li>Click the <strong>"Choose Image"</strong> on the left.</li>
+                            <li>Upload/Select image from Media Library.</li>
+                            <li>Click green <strong>"UPDATE"</strong> to save.</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
 
-            <div class="update-bar">
-                <div style="font-size: 11px;">MODIFIED</div>
+            <div class="elementor-footer">
+                <div style="font-size: 10px; color: #888;">STATUS: SAVED</div>
                 <div class="tutorial-overlay">
                     <span class="tutorial-step">3</span>
-                    <button class="btn-update">UPDATE</button>
+                    <button class="btn-publish">UPDATE</button>
                 </div>
             </div>
         </div>
 
-        <!-- Preview Window -->
+        <!-- iTech Homepage Preview Window -->
         <div class="preview-panel">
             <div
-                style="margin-bottom: 10px; font-size: 13px; color: #666; display: flex; justify-content: space-between;">
-                <span>Preview: Homepage</span>
-                <span>Responsive: Desktop</span>
+                style="margin-bottom: 8px; font-size: 12px; color: #555; display: flex; justify-content: space-between;">
+                <span>Live Preview: iTech Homepage</span>
+                <span>Desktop Mode</span>
             </div>
             <div class="preview-window">
-                <header
-                    style="background: #fff; padding: 15px 30px; display: flex; justify-content: space-between; border-bottom: 1px solid #eee; height: auto;">
-                    <div style="font-weight: 800; font-size: 18px; color: #96588a;">STORE.</div>
-                    <nav style="display: flex; gap: 20px; font-size: 14px;">
-                        <span>Home</span>
-                        <span>Shop</span>
-                        <span>Contact</span>
-                    </nav>
-                </header>
-                <div class="mock-hero tutorial-overlay">
-                    <span class="tutorial-step" style="top: 10px; left: 10px;">1</span>
-                    <div style="max-width: 500px;">
-                        <h1 style="font-size: 40px; margin-bottom: 10px;">Summer Collection</h1>
-                        <p>Experience the future of sound with our new wireless range.</p>
-                        <button
-                            style="margin-top: 20px; padding: 10px 25px; background: #96588a; color: #fff; border: none; font-weight: bold;">SHOP
-                            NOW</button>
+                <!-- iTech Header -->
+                <div class="itech-mock-header">
+                    <div class="itech-top-bar">
+                        <span>About Us</span>
+                        <span>Tech Blog</span>
+                        <span>Store Locations</span>
+                    </div>
+                    <div class="itech-main-header">
+                        <div class="itech-logo">i.<span style="color: var(--itech-cyan);">TECH</span></div>
+                        <div class="itech-search-mock"></div>
+                        <div style="font-size: 12px; color: #333; font-weight: bold;">Login / Register</div>
+                    </div>
+                    <div class="itech-nav-bar">
+                        <span style="color: #d00;">🔥 SALE</span>
+                        <span>Laptop Finder</span>
+                        <span>Custom PC Builder</span>
+                        <span>Powered By ASUS</span>
                     </div>
                 </div>
-                <div style="padding: 40px; text-align: center;">
-                    <div class="step-label" style="display: inline-block; text-align: left; max-width: 600px;">
-                        <h3>Step 1: Select the Image Module</h3>
-                        <p>In the live preview, click on the pencil icon or the image itself to activate the editor on
-                            the left sidebar.</p>
+
+                <div class="itech-content-grid">
+                    <!-- Sidebar Mock -->
+                    <div class="itech-sidebar-mock">
+                        <div class="itech-sidebar-item">Computer & Components <span>&gt;</span></div>
+                        <div class="itech-sidebar-item" style="font-weight: bold;">Laptops <span
+                                style="background: #d00; color:#fff; font-size:9px; padding:2px 4px; border-radius:3px;">HOT</span>
+                        </div>
+                        <div class="itech-sidebar-item">Desktops <span>&gt;</span></div>
+                        <div class="itech-sidebar-item">Gaming Peripherals <span>&gt;</span></div>
+                        <div class="itech-sidebar-item">Office Peripherals <span>&gt;</span></div>
+                        <div class="itech-sidebar-item">Apple <span>&gt;</span></div>
+                    </div>
+
+                    <!-- Hero Banner Tutorial Element -->
+                    <div class="main-body-preview">
+                        <div class="itech-hero-banner active-element tutorial-overlay">
+                            <span class="tutorial-step" style="top: 20px; left: 20px;">1</span>
+                            <div class="itech-hero-overlay">
+                                <h1 style="font-size: 32px; margin-bottom: 10px; line-height: 1.2;">AMD RYZEN 9000
+                                    SERIES</h1>
+                                <p style="font-size: 14px;">Next-gen performance for gaming and professional
+                                    productivity.</p>
+                                <button
+                                    style="margin-top: 15px; padding: 10px 30px; background: var(--itech-cyan); color: #fff; border: none; font-weight: bold; border-radius: 4px;">SHOP
+                                    NOW</button>
+                            </div>
+                        </div>
+
+                        <!-- Sub Tiles -->
+                        <div class="itech-sub-grid">
+                            <div class="itech-sub-tile"
+                                style="background-image: url('https://images.unsplash.com/photo-1547082299-de196ea013d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80');">
+                            </div>
+                            <div class="itech-sub-tile"
+                                style="background-image: url('https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80');">
+                            </div>
+                            <div class="itech-sub-tile"
+                                style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80');">
+                            </div>
+                        </div>
+
+                        <div style="padding: 20px; text-align: center;">
+                            <div class="step-label"
+                                style="display: inline-block; text-align: left; max-width: 600px; border-color: var(--itech-cyan); background: #f0f7ff;">
+                                <h3 style="color: var(--itech-blue);">Step 1: Select the Hero Module</h3>
+                                <p>Click anywhere on the blue-highlighted hero section in the preview area to open its
+                                    settings in the Elementor sidebar.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
