@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementor Image Guide | WooCommerce Mastery</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .elementor-layout {
+            display: flex;
+            height: 100vh;
+            background: #f1f3f5;
+            overflow: hidden;
+        }
+
+        /* Elementor Sidebar */
+        .elementor-sidebar {
+            width: 300px;
+            background: #26292c;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+        }
+
+        .elementor-sidebar-header {
+            padding: 15px;
+            background: #1e2124;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+        }
+
+        .elementor-tab-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .elementor-control-section {
+            margin-bottom: 30px;
+        }
+
+        .elementor-control-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            color: #ccc;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .elementor-image-preview {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #444;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 2px dashed #666;
+            position: relative;
+        }
+
+        .elementor-image-preview:hover {
+            border-color: #96588a;
+        }
+
+        /* Preview Panel */
+        .preview-panel {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .preview-window {
+            flex: 1;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mock-hero {
+            height: 400px;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+
+        .mock-hero.tutorial-overlay::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 3px solid #96588a;
+            pointer-events: none;
+        }
+
+        .update-bar {
+            background: #96588a;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-update {
+            background: #fff;
+            color: #96588a;
+            border: none;
+            padding: 6px 15px;
+            border-radius: 3px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="elementor-layout">
+        <!-- Sidebar Navigation (WP style) -->
+        <nav class="wp-sidebar" style="position: relative; height: 100vh;">
+            <div class="wp-sidebar-item" onclick="window.location.href='index.html'"><span class="icon">🏠</span> Home
+                Portal</div>
+            <div class="wp-sidebar-item"><span class="icon">🎨</span> Elementor</div>
+            <div class="wp-sidebar-item active">Edit Homepage</div>
+            <div class="wp-sidebar-item" style="padding-top: 20px; color: #888; font-size: 11px;">RESOURCES</div>
+            <div class="wp-sidebar-item" onclick="window.location.href='add-product.html'">Product Guide</div>
+            <div class="wp-sidebar-item" onclick="window.location.href='excel-update.html'">Excel Guide</div>
+        </nav>
+
+        <!-- Elementor Widget Panel -->
+        <div class="elementor-sidebar">
+            <div class="elementor-sidebar-header">
+                <span style="font-weight: bold; font-size: 14px;">EDIT IMAGE</span>
+                <span style="font-size: 18px; cursor: pointer;">☰</span>
+            </div>
+            <div class="elementor-tab-content">
+                <div class="elementor-control-section">
+                    <span class="elementor-control-title">Content</span>
+                    <div class="tutorial-overlay">
+                        <span class="tutorial-step">2</span>
+                        <div class="elementor-image-preview">
+                            <span style="font-size: 12px; color: #aaa;">Choose Image</span>
+                        </div>
+                    </div>
+                    <div class="step-label"
+                        style="background: transparent; border-color: #96588a; color: #fff; box-shadow: none;">
+                        <h3 style="color: #96588a;">Step 2: Choose Your Image</h3>
+                        <p style="color: #ccc; font-size: 13px;">Click the image box to open the Media Library and
+                            select your new high-res homepage banner.</p>
+                    </div>
+                </div>
+
+                <div class="elementor-control-section">
+                    <span class="elementor-control-title">Image Size</span>
+                    <select style="width: 100%; background: #444; border: 1px solid #555; color: #fff; padding: 5px;">
+                        <option>Full</option>
+                        <option>Large</option>
+                        <option>Medium</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="update-bar">
+                <div style="font-size: 11px;">MODIFIED</div>
+                <div class="tutorial-overlay">
+                    <span class="tutorial-step">3</span>
+                    <button class="btn-update">UPDATE</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preview Window -->
+        <div class="preview-panel">
+            <div
+                style="margin-bottom: 10px; font-size: 13px; color: #666; display: flex; justify-content: space-between;">
+                <span>Preview: Homepage</span>
+                <span>Responsive: Desktop</span>
+            </div>
+            <div class="preview-window">
+                <header
+                    style="background: #fff; padding: 15px 30px; display: flex; justify-content: space-between; border-bottom: 1px solid #eee; height: auto;">
+                    <div style="font-weight: 800; font-size: 18px; color: #96588a;">STORE.</div>
+                    <nav style="display: flex; gap: 20px; font-size: 14px;">
+                        <span>Home</span>
+                        <span>Shop</span>
+                        <span>Contact</span>
+                    </nav>
+                </header>
+                <div class="mock-hero tutorial-overlay">
+                    <span class="tutorial-step" style="top: 10px; left: 10px;">1</span>
+                    <div style="max-width: 500px;">
+                        <h1 style="font-size: 40px; margin-bottom: 10px;">Summer Collection</h1>
+                        <p>Experience the future of sound with our new wireless range.</p>
+                        <button
+                            style="margin-top: 20px; padding: 10px 25px; background: #96588a; color: #fff; border: none; font-weight: bold;">SHOP
+                            NOW</button>
+                    </div>
+                </div>
+                <div style="padding: 40px; text-align: center;">
+                    <div class="step-label" style="display: inline-block; text-align: left; max-width: 600px;">
+                        <h3>Step 1: Select the Image Module</h3>
+                        <p>In the live preview, click on the pencil icon or the image itself to activate the editor on
+                            the left sidebar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
