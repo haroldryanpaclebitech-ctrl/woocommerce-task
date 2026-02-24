@@ -1,47 +1,30 @@
-// Scroll Reveal Logic
-function reveal() {
-    var reveals = document.querySelectorAll(".reveal");
-
-    for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 150;
-
-        if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add("active");
-        } else {
-            // Optional: Remove if you want elements to stay visible after reveal
-            // reveals[i].classList.remove("active");
-        }
-    }
-}
-
-window.addEventListener("scroll", reveal);
-
-// Initial call to reveal elements on load
-window.addEventListener("load", () => {
-    reveal();
-    
-    // Add smooth scroll for the hero button
-    document.querySelector('a[href^="#"]').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+// Simple interactivity for the WooCommerce Mockup
+document.addEventListener('DOMContentLoaded', () => {
+    // Highlight effect on sidebar items
+    const sidebarItems = document.querySelectorAll('.wp-sidebar-item');
+    sidebarItems.forEach(item => {
+        item.addEventListener('click', () => {
+            sidebarItems.forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
         });
     });
-});
 
-// Dynamic Blob Movement
-document.addEventListener('mousemove', (e) => {
-    const blobs = document.querySelectorAll('.blob');
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
-    
-    blobs.forEach((blob, index) => {
-        const speed = (index + 1) * 0.05;
-        const x = (window.innerWidth - mouseX * speed) / 100;
-        const y = (window.innerHeight - mouseY * speed) / 100;
-        
-        blob.style.transform = `translate(${x}px, ${y}px)`;
+    // Alert on Publish click
+    const publishBtn = document.querySelector('.button-primary');
+    if (publishBtn) {
+        publishBtn.addEventListener('click', () => {
+            alert('Tutorial Complete! In a real scenario, this would save your product to the database.');
+        });
+    }
+
+    // Interactive step highlighting
+    const tutorialSteps = document.querySelectorAll('.tutorial-step');
+    tutorialSteps.forEach(step => {
+        step.addEventListener('mouseenter', () => {
+            step.parentElement.style.boxShadow = '0 0 15px rgba(150, 88, 138, 0.3)';
+        });
+        step.addEventListener('mouseleave', () => {
+            step.parentElement.style.boxShadow = 'none';
+        });
     });
 });

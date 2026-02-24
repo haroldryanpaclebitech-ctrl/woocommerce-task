@@ -1,148 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WooCommerce Mastery | Product Upload Guide</title>
-    <meta name="description" content="Master your WooCommerce store with our premium guide on how to upload products efficiently.">
+    <meta name="description"
+        content="Master your WooCommerce store with our premium guide on how to upload products efficiently.">
     <link rel="stylesheet" href="index.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>">
 </head>
+
 <body>
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
+    <!-- WordPress Sidebar Simulation -->
+    <nav class="wp-sidebar">
+        <div class="wp-sidebar-item"><span class="icon">🏠</span> Dashboard</div>
+        <div class="wp-sidebar-item"><span class="icon">📌</span> Posts</div>
+        <div class="wp-sidebar-item active"><span class="icon">📦</span> Products</div>
+        <div class="wp-sidebar-item" style="padding-left: 30px;">All Products</div>
+        <div class="wp-sidebar-item active" style="padding-left: 30px;">Add New</div>
+        <div class="wp-sidebar-item" style="padding-left: 30px;">Categories</div>
+        <div class="wp-sidebar-item" style="padding-left: 30px;">Attributes</div>
+        <div class="wp-sidebar-item"><span class="icon">📊</span> Analytics</div>
+        <div class="wp-sidebar-item"><span class="icon">⚙️</span> Settings</div>
+    </nav>
 
-    <header>
-        <div class="container hero-content">
-            <h1>WooCommerce<br>Product Mastery</h1>
-            <p>Transform your store management with our step-by-step guide to uploading and perfecting your products.</p>
-            <a href="#guide" class="btn btn-primary">Start the Guide</a>
-        </div>
-    </header>
+    <!-- Main Admin Content -->
+    <main class="wp-main">
+        <header>
+            <h1>Add new product <a href="#" class="wp-add-new">Add New</a></h1>
+        </header>
 
-    <main id="guide" class="steps-section">
-        <div class="container">
-            <div class="section-title reveal">
-                <h2>The Ultimate Flow</h2>
-                <p>Follow these 7 steps to master the product lifecycle.</p>
-            </div>
-
-            <!-- Step 1 -->
-            <div class="step-card reveal">
-                <div class="step-info">
-                    <span class="step-number">01</span>
-                    <h3>Access the Dashboard</h3>
-                    <p>Navigate to your WordPress admin panel. On the left-hand sidebar, hover over the <strong>Products</strong> menu item to reveal the sub-commands.</p>
+        <div class="wp-editor-grid">
+            <!-- Central Editor Column -->
+            <div class="editor-left-col">
+                <div class="tutorial-overlay">
+                    <span class="tutorial-step">1</span>
+                    <input type="text" class="wp-title-input" placeholder="Product name"
+                        value="Modern Wireless Headphones">
                 </div>
-                <div class="step-visual">
-                    <div class="visual-placeholder">
-                        <div style="padding: 20px; color: rgba(255,255,255,0.2);">Dashboard Interface Preview</div>
+                <div class="step-label">
+                    <h3>Step 1: The Product Identity</h3>
+                    <p>Start by entering your product title. This is the first thing customers see and is critical for
+                        SEO.</p>
+                </div>
+
+                <div class="meta-box" style="margin-top: 30px;">
+                    <div class="meta-box-header">Product description</div>
+                    <div class="meta-box-content">
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-step">2</span>
+                            <div class="wp-editor-mock" style="padding: 15px; color: #999;">
+                                High-performance wireless headphones with noise-canceling technology...
+                            </div>
+                        </div>
+                        <div class="step-label">
+                            <h3>Step 2: The Main Narrative</h3>
+                            <p>Write a detailed description here. Focus on benefits, technical specs, and what makes
+                                your product unique.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Step 2 -->
-            <div class="step-card reveal">
-                <div class="step-info">
-                    <span class="step-number">02</span>
-                    <h3>Initialize New Product</h3>
-                    <p>Click on <strong>Add New</strong>. This opens the product editor where you'll define the essence of what you're selling.</p>
-                </div>
-                <div class="step-visual">
-                    <div class="visual-placeholder">
-                        <div style="position:absolute; top:40%; left:40%; padding:10px 20px; border: 1px solid var(--primary); color: var(--primary); border-radius: 4px;">+ Add New</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="step-card reveal">
-                <div class="step-info">
-                    <span class="step-number">03</span>
-                    <h3>Identity & Narrative</h3>
-                    <p>Enter a compelling <strong>Product Title</strong> and a detailed description. Remember: your description handles the selling, while the title handles the search.</p>
-                </div>
-                <div class="step-visual">
-                    <div class="visual-placeholder">
-                        <div style="margin:20px; height:20px; width:70%; background:rgba(255,255,255,0.1); border-radius:4px;"></div>
-                        <div style="margin:20px; height:100px; width:80%; background:rgba(255,255,255,0.05); border-radius:4px;"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 4 -->
-            <div class="step-card reveal">
-                <div class="step-info">
-                    <span class="step-number">04</span>
-                    <h3>The Data Hub</h3>
-                    <p>Scroll down to the <strong>Product Data</strong> widget. Here, set your price, SKU, stock levels, and shipping dimensions. Toggle between Simple and Variable products as needed.</p>
-                </div>
-                <div class="step-visual">
-                    <div class="visual-placeholder">
-                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; padding:20px;">
-                            <div style="height:30px; background:rgba(255,255,255,0.1);"></div>
-                            <div style="height:30px; background:rgba(255,255,255,0.1);"></div>
-                            <div style="height:30px; background:rgba(255,255,255,0.1);"></div>
-                            <div style="height:30px; background:rgba(255,255,255,0.1);"></div>
+                <div class="meta-box">
+                    <div class="meta-box-header">Product data — Simple product</div>
+                    <div class="meta-box-content">
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-step">3</span>
+                            <div
+                                style="display: grid; grid-template-columns: 150px 1fr; gap: 15px; align-items: center;">
+                                <label style="font-size: 13px;">Regular price ($)</label>
+                                <input type="text" value="199.99"
+                                    style="padding: 5px; border:1px solid var(--wp-border); width: 100px;">
+                                <label style="font-size: 13px;">Sale price ($)</label>
+                                <input type="text" placeholder="Optional"
+                                    style="padding: 5px; border:1px solid var(--wp-border); width: 100px;">
+                            </div>
+                        </div>
+                        <div class="step-label">
+                            <h3>Step 3: Financial Configuration</h3>
+                            <p>Set your pricing. You can also schedule sale prices for future promotions here.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Step 5 -->
-            <div class="step-card reveal">
-                <div class="step-info">
-                    <span class="step-number">05</span>
-                    <h3>Visual Excellence</h3>
-                    <p>Upload a high-resolution <strong>Product Image</strong>. Use the <strong>Product Gallery</strong> for alternative angles, lifestyle shots, or feature close-ups.</p>
-                </div>
-                <div class="step-visual">
-                    <div class="visual-placeholder" style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
-                        <div style="width:60%; aspect-ratio:1; background:var(--glass); border: 2px dashed rgba(255,255,255,0.1); border-radius:12px;"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 6 -->
-            <div class="step-card reveal">
-                <div class="step-info">
-                    <span class="step-number">06</span>
-                    <h3>Organize for Success</h3>
-                    <p>Select relevant <strong>Categories</strong> and add descriptive <strong>Tags</strong>. This ensures customers can find your product through navigation and search filters.</p>
-                </div>
-                <div class="step-visual">
-                    <div class="visual-placeholder">
-                        <div style="padding:20px;">
-                            <div style="height:15px; width:40%; background:var(--primary); margin-bottom:10px; border-radius:4px;"></div>
-                            <div style="height:15px; width:30%; background:rgba(255,255,255,0.1); margin-bottom:10px; border-radius:4px;"></div>
-                            <div style="height:15px; width:50%; background:rgba(255,255,255,0.1); border-radius:4px;"></div>
+            <!-- Right Sidebar Column -->
+            <div class="editor-right-col">
+                <div class="meta-box sidebar-meta-box">
+                    <div class="meta-box-header">Publish</div>
+                    <div class="meta-box-content">
+                        <p>Status: <strong>Draft</strong></p>
+                        <p>Visibility: <strong>Public</strong></p>
+                        <div class="tutorial-overlay" style="margin-top: 15px;">
+                            <span class="tutorial-step">7</span>
+                            <div class="publish-actions">
+                                <button class="button-primary">Publish</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Step 7 -->
-            <div class="step-card reveal">
-                <div class="step-info">
-                    <span class="step-number">07</span>
-                    <h3>The Big Launch</h3>
-                    <p>Review everything in the <strong>Publish</strong> box. Set your visibility settings, then hit that blue <strong>Publish</strong> button to go live worldwide.</p>
+                <div class="meta-box sidebar-meta-box">
+                    <div class="meta-box-header">Product categories</div>
+                    <div class="meta-box-content">
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-step">6</span>
+                            <div style="max-height: 100px; overflow-y: auto;">
+                                <label style="display: block;"><input type="checkbox" checked> Electronics</label>
+                                <label style="display: block;"><input type="checkbox"> Accessories</label>
+                                <label style="display: block;"><input type="checkbox"> Audio</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="step-visual">
-                    <div class="visual-placeholder" style="display:flex; align-items:center; justify-content:center;">
-                        <div style="padding: 12px 30px; background: #22c55e; color: white; border-radius: 8px; font-weight: bold; cursor: pointer;">PUBLISH</div>
+
+                <div class="meta-box sidebar-meta-box">
+                    <div class="meta-box-header">Product image</div>
+                    <div class="meta-box-content">
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-step">5</span>
+                            <div
+                                style="width: 100%; aspect-ratio: 1; background: #f0f0f1; border: 1px dashed var(--wp-border); display: flex; align-items: center; justify-content: center; color: var(--wp-blue);">
+                                Set product image
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 WooCommerce Mastery Guide. All rights reserved.</p>
-        </div>
-    </footer>
-
     <script src="main.js"></script>
 </body>
+
 </html>
