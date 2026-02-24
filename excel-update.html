@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Bulk Update | WooCommerce Mastery</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .excel-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        .excel-table th,
+        .excel-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .excel-table th {
+            background-color: #f2f2f2;
+            font-weight: 600;
+        }
+
+        .highlight-excel {
+            background-color: #fff9c4;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+
+        .import-box {
+            border: 2px dashed var(--wp-border);
+            padding: 40px;
+            text-align: center;
+            background: #fafafa;
+            border-radius: 4px;
+        }
+
+        .nav-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--wp-border);
+            margin-bottom: 20px;
+        }
+
+        .nav-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-bottom: none;
+            margin-bottom: -1px;
+            font-size: 14px;
+        }
+
+        .nav-tab.active {
+            background: #fff;
+            border-color: var(--wp-border);
+            border-top: 3px solid var(--woo-purple);
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- WordPress Sidebar Simulation -->
+    <nav class="wp-sidebar">
+        <div class="wp-sidebar-item" onclick="window.location.href='index.html'"><span class="icon">🏠</span> Dashboard
+        </div>
+        <div class="wp-sidebar-item"><span class="icon">📌</span> Posts</div>
+        <div class="wp-sidebar-item active"><span class="icon">📦</span> Products</div>
+        <div class="wp-sidebar-item" style="padding-left: 30px;" onclick="window.location.href='index.html'">Add New
+        </div>
+        <div class="wp-sidebar-item active" style="padding-left: 30px;">Import (Excel)</div>
+        <div class="wp-sidebar-item" style="padding-left: 30px;">Categories</div>
+        <div class="wp-sidebar-item"><span class="icon">📊</span> Analytics</div>
+        <div class="wp-sidebar-item"><span class="icon">⚙️</span> Settings</div>
+    </nav>
+
+    <!-- Main Admin Content -->
+    <main class="wp-main">
+        <header>
+            <h1>Import Products from Excel <a href="index.html" class="wp-add-new">Back to Editor</a></h1>
+        </header>
+
+        <div class="nav-tabs">
+            <div class="nav-tab active">Upload CSV/Excel</div>
+            <div class="nav-tab">Column Mapping</div>
+            <div class="nav-tab">Update Pricing</div>
+        </div>
+
+        <div class="wp-editor-grid">
+            <div class="editor-left-col">
+                <!-- Step 1: Excel Structure -->
+                <div class="meta-box">
+                    <div class="meta-box-header">1. Prepare Your Excel Sheet</div>
+                    <div class="meta-box-content">
+                        <p style="margin-bottom: 15px; font-size: 14px;">Ensure your Excel or CSV file contains these
+                            exact columns for successful pricing updates:</p>
+
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-step">!</span>
+                            <table class="excel-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID / SKU</th>
+                                        <th>Name</th>
+                                        <th class="highlight-excel">Regular Price</th>
+                                        <th class="highlight-excel">Sale Price</th>
+                                        <th class="highlight-excel">Sale Start Date</th>
+                                        <th class="highlight-excel">Sale End Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>WH-001</td>
+                                        <td>Wireless Headphones</td>
+                                        <td>199.99</td>
+                                        <td>149.99</td>
+                                        <td>2026-03-01</td>
+                                        <td>2026-03-15</td>
+                                    </tr>
+                                    <tr>
+                                        <td>BT-202</td>
+                                        <td>Bluetooth Speaker</td>
+                                        <td>89.00</td>
+                                        <td>59.00</td>
+                                        <td>2026-02-24</td>
+                                        <td>2026-03-10</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="step-label">
+                            <h3>Column Formatting Note</h3>
+                            <p>Dates should follow the <strong>YYYY-MM-DD</strong> format for WooCommerce to recognize
+                                the schedule correctly.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Upload Logic -->
+                <div class="meta-box">
+                    <div class="meta-box-header">2. Upload and Update Existing Products</div>
+                    <div class="meta-box-content">
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-step">CSV</span>
+                            <div class="import-box">
+                                <p>Drop your Excel file here or click to browse</p>
+                                <button class="button-primary" style="margin-top: 15px;">Choose File</button>
+                                <div style="margin-top: 20px; font-size: 13px; color: #666;">
+                                    <label><input type="checkbox" checked> <strong>Update existing products</strong>
+                                        (Match by ID or SKU)</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-label">
+                            <h3>Key Selection</h3>
+                            <p>Always check "Update existing products" when your goal is to change prices and sale dates
+                                for products already in your store.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="editor-right-col">
+                <div class="meta-box sidebar-meta-box">
+                    <div class="meta-box-header">Pro Tips</div>
+                    <div class="meta-box-content">
+                        <p style="color: #d32f2f; font-weight: 600; margin-bottom: 10px;">⚠️ Warning</p>
+                        <p>Prices must be numeric only (no currency symbols like $).</p>
+                        <hr style="margin: 15px 0; border: 0; border-top: 1px solid #eee;">
+                        <p><strong>Flash Sale Tip:</strong> Set the 'Sale End Date' to tomorrow to trigger the "Sale
+                            ends soon" urgency badge on your storefront.</p>
+                    </div>
+                </div>
+
+                <div class="meta-box sidebar-meta-box">
+                    <div class="meta-box-header">Process Actions</div>
+                    <div class="meta-box-content">
+                        <button class="button-woo" style="width: 100%;">Run the Importer</button>
+                        <p style="font-size: 11px; margin-top: 10px; color: #888; text-align: center;">Estimated time:
+                            30 seconds for 500 products</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
