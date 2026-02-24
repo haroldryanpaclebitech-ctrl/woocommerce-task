@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Product Setup | WooCommerce Mastery</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- WordPress Sidebar Simulation -->
+    <nav class="wp-sidebar">
+        <div class="wp-sidebar-item" onclick="window.location.href='index.html'"><span class="icon">🏠</span> Home
+            Portal</div>
+        <div class="wp-sidebar-item"><span class="icon">📌</span> Posts</div>
+        <div class="wp-sidebar-item active"><span class="icon">📦</span> Products</div>
+        <div class="wp-sidebar-item" style="padding-left: 30px;" onclick="window.location.href='add-product.html'">All
+            Products</div>
+        <div class="wp-sidebar-item active" style="padding-left: 30px;"
+            onclick="window.location.href='add-product.html'">Add New</div>
+        <div class="wp-sidebar-item active" style="padding-left: 30px;">Variable Products</div>
+        <div class="wp-sidebar-item" style="padding-left: 30px;" onclick="window.location.href='excel-update.html'">
+            Import (Excel)</div>
+        <div class="wp-sidebar-item" style="padding-left: 30px;">Categories</div>
+        <div class="wp-sidebar-item"><span class="icon">📊</span> Analytics</div>
+        <div class="wp-sidebar-item"><span class="icon">⚙️</span> Settings</div>
+    </nav>
+
+    <!-- Main Admin Content -->
+    <main class="wp-main">
+        <header>
+            <h1>Add new variable product <a href="add-product.html" class="wp-add-new">Add New</a></h1>
+        </header>
+
+        <div class="wp-editor-grid">
+            <div class="editor-left-col">
+                <input type="text" class="wp-title-input" placeholder="Product name" value="Premium Cotton T-Shirt">
+
+                <div class="meta-box">
+                    <div class="meta-box-header">Product data — Variable product</div>
+                    <div class="meta-box-content">
+                        <div style="display: flex; border-bottom: 1px solid var(--wp-border); margin-bottom: 20px;">
+                            <div
+                                style="padding: 10px 15px; border-right: 1px solid var(--wp-border); background: #eee; font-size: 13px; width: 150px;">
+                                <div style="margin-bottom: 10px;">General</div>
+                                <div style="margin-bottom: 10px;">Inventory</div>
+                                <div style="margin-bottom: 10px;">Shipping</div>
+                                <div style="margin-bottom: 10px; font-weight: bold; color: var(--wp-blue);">Attributes
+                                </div>
+                                <div style="margin-bottom: 10px;">Variations</div>
+                            </div>
+                            <div style="flex: 1; padding: 15px;">
+                                <!-- Step 1 -->
+                                <div class="tutorial-overlay">
+                                    <span class="tutorial-step">1</span>
+                                    <div style="border: 1px solid var(--wp-border); padding: 10px; background: #fff;">
+                                        <strong>Custom product attribute</strong> <button class="button-primary"
+                                            style="float: right; transform: translateY(-3px);">Add</button>
+                                    </div>
+                                </div>
+                                <div class="step-label">
+                                    <h3>Step 1: Define Attributes</h3>
+                                    <p>First, go to the <strong>Attributes</strong> tab. Add attributes like "Size" or
+                                        "Color". Ensure you check <strong>"Used for variations"</strong>.</p>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="tutorial-overlay" style="margin-top: 30px;">
+                                    <span class="tutorial-step">2</span>
+                                    <select class="button-primary"
+                                        style="background: #fff; color: #333; border: 1px solid var(--wp-border); width: 100%;">
+                                        <option>Create variations from all attributes</option>
+                                    </select>
+                                    <button class="button-primary" style="margin-top: 10px;">Go</button>
+                                </div>
+                                <div class="step-label">
+                                    <h3>Step 2: Generate Variations</h3>
+                                    <p>Switch to the <strong>Variations</strong> tab. Select "Create variations from all
+                                        attributes" and click "Go". WooCommerce will automatically create every possible
+                                        combination.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meta-box">
+                    <div class="meta-box-header">Individual Variation Settings</div>
+                    <div class="meta-box-content">
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-step">3</span>
+                            <div style="border: 1px solid var(--wp-border); margin-bottom: 10px;">
+                                <div
+                                    style="background: #f8f8f8; padding: 10px; border-bottom: 1px solid var(--wp-border); display: flex; justify-content: space-between;">
+                                    <span>#1024 - Blue, Large</span>
+                                    <span>Edit</span>
+                                </div>
+                                <div style="padding: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                    <div>
+                                        <label style="font-size: 12px; display: block;">SKU</label>
+                                        <input type="text" value="TSHIRT-BLUE-L"
+                                            style="width: 100%; padding: 5px; border: 1px solid var(--wp-border);">
+                                    </div>
+                                    <div>
+                                        <label style="font-size: 12px; display: block;">Regular price ($)</label>
+                                        <input type="text" value="25.00"
+                                            style="width: 100%; padding: 5px; border: 1px solid var(--wp-border);">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-label">
+                            <h3>Step 3: Configure Each Variation</h3>
+                            <p>Expand each variation to set its unique SKU, Price, and Stock level. Even if prices are
+                                the same, they must be entered for each variation to be purchasable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="editor-right-col">
+                <div class="meta-box sidebar-meta-box">
+                    <div class="meta-box-header">Publish</div>
+                    <div class="meta-box-content">
+                        <p>Status: <strong>Draft</strong></p>
+                        <button class="button-primary" style="width:100%; margin-top:10px;">Publish</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
