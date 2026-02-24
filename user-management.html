@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management Guide | iTech Mastery Portal</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- WordPress Sidebar Simulation -->
+    <nav class="wp-sidebar">
+        <div class="wp-sidebar-item" onclick="window.location.href='index.html'"><span class="icon">🏠</span> Home
+            Portal</div>
+        <div class="wp-sidebar-item"><span class="icon">📌</span> Posts</div>
+        <div class="wp-sidebar-item"><span class="icon">📦</span> Products</div>
+        <div class="wp-sidebar-item active"><span class="icon">👥</span> Users</div>
+        <div class="wp-sidebar-item" style="padding-left: 30px;">All Users</div>
+        <div class="wp-sidebar-item active" style="padding-left: 30px;">Add New</div>
+        <div class="wp-sidebar-item" style="padding-top: 20px; color: #888; font-size: 11px;">RESOURCES</div>
+        <div class="wp-sidebar-item" onclick="window.location.href='add-product.html'">Product Guide</div>
+        <div class="wp-sidebar-item" onclick="window.location.href='elementor-guide.html'">Elementor Guide</div>
+    </nav>
+
+    <!-- Main Admin Content -->
+    <main class="wp-main">
+        <header>
+            <h1>Add New User</h1>
+        </header>
+
+        <div class="wp-editor-grid">
+            <div class="editor-left-col">
+                <div class="meta-box">
+                    <div class="meta-box-header">Create a brand new user and set their role</div>
+                    <div class="meta-box-content">
+                        <!-- Step 1: User Identity -->
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-step">1</span>
+                            <div
+                                style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; margin-bottom: 20px;">
+                                <label style="font-size: 14px; font-weight: 500;">Username (required)</label>
+                                <input type="text" value="itech_staff_01"
+                                    style="padding: 8px; border: 1px solid var(--wp-border); width: 100%;">
+
+                                <label style="font-size: 14px; font-weight: 500;">Email (required)</label>
+                                <input type="email" value="staff@itech.ph"
+                                    style="padding: 8px; border: 1px solid var(--wp-border); width: 100%;">
+                            </div>
+                        </div>
+                        <div class="step-label">
+                            <h3>Step 1: User Identity</h3>
+                            <p>Enter a unique username and a corporate email address for the new team member.</p>
+                        </div>
+
+                        <!-- Step 2: Role Selection -->
+                        <div class="tutorial-overlay" style="margin-top: 40px;">
+                            <span class="tutorial-step">2</span>
+                            <div
+                                style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; align-items: center; background: #f9f9f9; padding: 20px; border: 1px solid var(--wp-border);">
+                                <label
+                                    style="font-size: 14px; font-weight: bold; color: var(--itech-blue);">Role</label>
+                                <select
+                                    style="padding: 10px; border: 2px solid var(--itech-blue); width: 100%; font-weight: bold;">
+                                    <option>Subscriber</option>
+                                    <option>Contributor</option>
+                                    <option>Author</option>
+                                    <option selected>Editor</option>
+                                    <option>Shop Manager</option>
+                                    <option>Administrator</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="step-label">
+                            <h3>Step 2: Assigning the Role</h3>
+                            <p>This is critical. Choose the correct access level:</p>
+                            <ul style="font-size: 13px; color: #555; margin-top: 10px;">
+                                <li><strong>Editor:</strong> Can manage and publish posts/pages.</li>
+                                <li><strong>Shop Manager:</strong> Can manage products and orders.</li>
+                                <li><strong>Administrator:</strong> Full access (use sparingly).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="editor-right-col">
+                <div class="meta-box sidebar-meta-box">
+                    <div class="meta-box-header">Action</div>
+                    <div class="meta-box-content">
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-step">3</span>
+                            <button class="button-primary" style="width: 100%; padding: 12px;">Add New User</button>
+                        </div>
+                        <div class="step-label">
+                            <h3>Step 3: Save User</h3>
+                            <p>Click the button to create the account. An invitation email will be sent automatically.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meta-box sidebar-meta-box">
+                    <div class="meta-box-header">Quick Tip</div>
+                    <div class="meta-box-content" style="font-size: 13px; color: #666;">
+                        <p>To change a role later, go to <strong>Users > All Users</strong>, click the user, and update
+                            the 'Role' dropdown.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
